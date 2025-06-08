@@ -1,0 +1,842 @@
+[
+  {
+    "word": "Apple",
+    "meaning": "Elma",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Animal",
+    "meaning": "Hayvan",
+    "level": "A1",
+    "category": "Animals"
+  },
+  {
+    "word": "Answer",
+    "meaning": "Cevap",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Arm",
+    "meaning": "Kol",
+    "level": "A1",
+    "category": "Body"
+  },
+  {
+    "word": "Ask",
+    "meaning": "Sormak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Aunt",
+    "meaning": "Teyze/Hala",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Baby",
+    "meaning": "Bebek",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Back",
+    "meaning": "Sırt/Arka",
+    "level": "A1",
+    "category": "Body"
+  },
+  {
+    "word": "Bag",
+    "meaning": "Çanta",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "Ball",
+    "meaning": "Top",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Banana",
+    "meaning": "Muz",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Bed",
+    "meaning": "Yatak",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "Big",
+    "meaning": "Büyük",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Bird",
+    "meaning": "Kuş",
+    "level": "A1",
+    "category": "Animals"
+  },
+  {
+    "word": "Book",
+    "meaning": "Kitap",
+    "level": "A1",
+    "category": "Objects"
+  },
+  {
+    "word": "Boy",
+    "meaning": "Erkek çocuk",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Brother",
+    "meaning": "Erkek kardeş",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Cake",
+    "meaning": "Kek",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Cat",
+    "meaning": "Kedi",
+    "level": "A1",
+    "category": "Animals"
+  },
+  {
+    "word": "Chair",
+    "meaning": "Sandalye",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "City",
+    "meaning": "Şehir",
+    "level": "A1",
+    "category": "Places"
+  },
+  {
+    "word": "Classroom",
+    "meaning": "Sınıf",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Close",
+    "meaning": "Kapatmak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Coffee",
+    "meaning": "Kahve",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Computer",
+    "meaning": "Bilgisayar",
+    "level": "A1",
+    "category": "Objects"
+  },
+  {
+    "word": "Country",
+    "meaning": "Ülke",
+    "level": "A1",
+    "category": "Places"
+  },
+  {
+    "word": "Dance",
+    "meaning": "Dans etmek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Day",
+    "meaning": "Gün",
+    "level": "A1",
+    "category": "Time"
+  },
+  {
+    "word": "Dog",
+    "meaning": "Köpek",
+    "level": "A1",
+    "category": "Animals"
+  },
+  {
+    "word": "Door",
+    "meaning": "Kapı",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "Drink",
+    "meaning": "İçmek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Drive",
+    "meaning": "Sürmek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Doctor",
+    "meaning": "Doktor",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Ear",
+    "meaning": "Kulak",
+    "level": "A1",
+    "category": "Body"
+  },
+  {
+    "word": "Eat",
+    "meaning": "Yemek yemek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Egg",
+    "meaning": "Yumurta",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Elephant",
+    "meaning": "Fil",
+    "level": "A1",
+    "category": "Animals"
+  },
+  {
+    "word": "Evening",
+    "meaning": "Akşam",
+    "level": "A1",
+    "category": "Time"
+  },
+  {
+    "word": "Eye",
+    "meaning": "Göz",
+    "level": "A1",
+    "category": "Body"
+  },
+  {
+    "word": "Family",
+    "meaning": "Aile",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Father",
+    "meaning": "Baba",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Flower",
+    "meaning": "Çiçek",
+    "level": "A1",
+    "category": "Nature"
+  },
+  {
+    "word": "Food",
+    "meaning": "Yiyecek",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Friend",
+    "meaning": "Arkadaş",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Fruit",
+    "meaning": "Meyve",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Game",
+    "meaning": "Oyun",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Girl",
+    "meaning": "Kız çocuk",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Go",
+    "meaning": "Gitmek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Good",
+    "meaning": "İyi",
+    "level": "A1",
+    "category": "Emotions"
+  },
+  {
+    "word": "Grandfather",
+    "meaning": "Dede",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Grandmother",
+    "meaning": "Nine",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Hair",
+    "meaning": "Saç",
+    "level": "A1",
+    "category": "Body"
+  },
+  {
+    "word": "Hand",
+    "meaning": "El",
+    "level": "A1",
+    "category": "Body"
+  },
+  {
+    "word": "Happy",
+    "meaning": "Mutlu",
+    "level": "A1",
+    "category": "Emotions"
+  },
+  {
+    "word": "Hat",
+    "meaning": "Şapka",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Head",
+    "meaning": "Baş",
+    "level": "A1",
+    "category": "Body"
+  },
+  {
+    "word": "Hello",
+    "meaning": "Merhaba",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "House",
+    "meaning": "Ev",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "Ice",
+    "meaning": "Buz",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Ice cream",
+    "meaning": "Dondurma",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Idea",
+    "meaning": "Fikir",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Important",
+    "meaning": "Önemli",
+    "level": "A1",
+    "category": "Emotions"
+  },
+  {
+    "word": "In",
+    "meaning": "İçinde",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Information",
+    "meaning": "Bilgi",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Job",
+    "meaning": "İş",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Juice",
+    "meaning": "Meyve suyu",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Jump",
+    "meaning": "Zıplamak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Key",
+    "meaning": "Anahtar",
+    "level": "A1",
+    "category": "Objects"
+  },
+  {
+    "word": "Kitchen",
+    "meaning": "Mutfak",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "Know",
+    "meaning": "Bilmek",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Language",
+    "meaning": "Dil",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Learn",
+    "meaning": "Öğrenmek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Leg",
+    "meaning": "Bacak",
+    "level": "A1",
+    "category": "Body"
+  },
+  {
+    "word": "Library",
+    "meaning": "Kütüphane",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "Listen",
+    "meaning": "Dinlemek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Live",
+    "meaning": "Yaşamak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Love",
+    "meaning": "Sevmek",
+    "level": "A1",
+    "category": "Emotions"
+  },
+  {
+    "word": "Man",
+    "meaning": "Adam",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Market",
+    "meaning": "Pazar",
+    "level": "A1",
+    "category": "Places"
+  },
+  {
+    "word": "Milk",
+    "meaning": "Süt",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Mother",
+    "meaning": "Anne",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Music",
+    "meaning": "Müzik",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Name",
+    "meaning": "İsim",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Night",
+    "meaning": "Gece",
+    "level": "A1",
+    "category": "Time"
+  },
+  {
+    "word": "Number",
+    "meaning": "Numara",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Nurse",
+    "meaning": "Hemşire",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Ocean",
+    "meaning": "Okyanus",
+    "level": "A1",
+    "category": "Places"
+  },
+  {
+    "word": "Open",
+    "meaning": "Açmak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Orange",
+    "meaning": "Portakal/Turuncu",
+    "level": "A1",
+    "category": "Colors"
+  },
+  {
+    "word": "Paper",
+    "meaning": "Kağıt",
+    "level": "A1",
+    "category": "Objects"
+  },
+  {
+    "word": "Park",
+    "meaning": "Park",
+    "level": "A1",
+    "category": "Places"
+  },
+  {
+    "word": "Pencil",
+    "meaning": "Kurşun kalem",
+    "level": "A1",
+    "category": "Objects"
+  },
+  {
+    "word": "Phone",
+    "meaning": "Telefon",
+    "level": "A1",
+    "category": "Objects"
+  },
+  {
+    "word": "Picture",
+    "meaning": "Resim",
+    "level": "A1",
+    "category": "Objects"
+  },
+  {
+    "word": "Pizza",
+    "meaning": "Pizza",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Play",
+    "meaning": "Oynamak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Police",
+    "meaning": "Polis",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Question",
+    "meaning": "Soru",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Quick",
+    "meaning": "Hızlı",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Rain",
+    "meaning": "Yağmur",
+    "level": "A1",
+    "category": "Nature"
+  },
+  {
+    "word": "Read",
+    "meaning": "Okumak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Red",
+    "meaning": "Kırmızı",
+    "level": "A1",
+    "category": "Colors"
+  },
+  {
+    "word": "River",
+    "meaning": "Nehir",
+    "level": "A1",
+    "category": "Nature"
+  },
+  {
+    "word": "Room",
+    "meaning": "Oda",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "Run",
+    "meaning": "Koşmak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "School",
+    "meaning": "Okul",
+    "level": "A1",
+    "category": "Places"
+  },
+  {
+    "word": "Sea",
+    "meaning": "Deniz",
+    "level": "A1",
+    "category": "Places"
+  },
+  {
+    "word": "See",
+    "meaning": "Görmek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Sister",
+    "meaning": "Kız kardeş",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Sit",
+    "meaning": "Oturmak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Sleep",
+    "meaning": "Uyumak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Small",
+    "meaning": "Küçük",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Son",
+    "meaning": "Oğul",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Sun",
+    "meaning": "Güneş",
+    "level": "A1",
+    "category": "Nature"
+  },
+  {
+    "word": "Swim",
+    "meaning": "Yüzmek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Table",
+    "meaning": "Masa",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "Teacher",
+    "meaning": "Öğretmen",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Telephone",
+    "meaning": "Telefon",
+    "level": "A1",
+    "category": "Objects"
+  },
+  {
+    "word": "Thank",
+    "meaning": "Teşekkür etmek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Tree",
+    "meaning": "Ağaç",
+    "level": "A1",
+    "category": "Objects"
+  },
+  {
+    "word": "Uncle",
+    "meaning": "Amca/Dayı",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Understand",
+    "meaning": "Anlamak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Use",
+    "meaning": "Kullanmak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Vacation",
+    "meaning": "Tatil",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Vegetable",
+    "meaning": "Sebze",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Visit",
+    "meaning": "Ziyaret etmek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Voice",
+    "meaning": "Ses",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Walk",
+    "meaning": "Yürümek",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Water",
+    "meaning": "Su",
+    "level": "A1",
+    "category": "Food"
+  },
+  {
+    "word": "Window",
+    "meaning": "Pencere",
+    "level": "A1",
+    "category": "Home"
+  },
+  {
+    "word": "Woman",
+    "meaning": "Kadın",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Work",
+    "meaning": "Çalışmak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Write",
+    "meaning": "Yazmak",
+    "level": "A1",
+    "category": "Actions"
+  },
+  {
+    "word": "Year",
+    "meaning": "Yıl",
+    "level": "A1",
+    "category": "Time"
+  },
+  {
+    "word": "Yellow",
+    "meaning": "Sarı",
+    "level": "A1",
+    "category": "Colors"
+  },
+  {
+    "word": "Yes",
+    "meaning": "Evet",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "You",
+    "meaning": "Sen/Siz",
+    "level": "A1",
+    "category": "People"
+  },
+  {
+    "word": "Young",
+    "meaning": "Genç",
+    "level": "A1",
+    "category": "Other"
+  },
+  {
+    "word": "Zoo",
+    "meaning": "Hayvanat bahçesi",
+    "level": "A1",
+    "category": "Animals"
+  },
+  {
+    "word": "Zero",
+    "meaning": "Sıfır",
+    "level": "A1",
+    "category": "Other"
+  }
+]
