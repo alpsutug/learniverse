@@ -83,8 +83,9 @@ public class AuthServiceImpl implements AuthService {
             throw new WorkBusinessException(
                     msgUtil.createWorkMessageWithCode("hesap.aktif.degil", WorkMessageType.ERROR));
         }
+        boolean isActive = user.isEnabled();
         String token = jwt.generateToken(user.getEmail());
-        return new JwtResponseDTO(token);
+        return new JwtResponseDTO(token,isActive);
     }
 
     /* ---------- Şifre sıfırlama iskeletleri ---------- */
