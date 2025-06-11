@@ -14,7 +14,7 @@ public class MailServiceImpl implements MailService {
 
     @Override
     public void sendResetPasswordMail(String to, String token) {
-        String link = "https://frontend.app/reset?token=" + token;
+        String link = "https://learnversee.netlify.app/reset?token=" + token;
 
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setTo(to);
@@ -35,7 +35,7 @@ public class MailServiceImpl implements MailService {
     // mail/service/impl/MailServiceImpl.java
     @Override
     public void sendActivationMail(String to, String token) {
-        String link = "http://localhost:8010/auth/verify?token=" + token;
+        String link = "https://learnversee.netlify.app/dogrula?token=" + token;
 
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setTo(to);
