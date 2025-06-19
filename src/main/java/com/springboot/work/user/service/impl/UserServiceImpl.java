@@ -222,4 +222,8 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username);
     }
 
+    public Users getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
 }

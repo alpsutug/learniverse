@@ -40,7 +40,7 @@ public class UserController {
     @PutMapping(path = "/updateUser")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<UserResponseDTO> updateUser(@RequestBody UserRequestDTO userRequestDTO, @RequestParam Long id) {
-        return new ResponseEntity<>(userService.updateUser(userRequestDTO,id),HttpStatus.OK);
+        return new ResponseEntity<>(userService.updateUser(userRequestDTO, id), HttpStatus.OK);
     }
 
 
@@ -61,6 +61,12 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public Users getUserByUserName(@RequestParam String username) {
         return userService.getUserByUserName(username);
+    }
+
+    @GetMapping(path = "getUserInfo")
+    @ResponseStatus(HttpStatus.OK)
+    public Users getUserByMail(@RequestParam String email) {
+        return userService.getUserByEmail(email);
     }
 
 
