@@ -1,5 +1,6 @@
 package com.springboot.work.user.controller;
 
+import com.springboot.work.user.dto.UserInfoResponseDTO;
 import com.springboot.work.user.dto.UserRequestDTO;
 import com.springboot.work.user.dto.UserResponseDTO;
 import com.springboot.work.user.entity.Users;
@@ -65,8 +66,9 @@ public class UserController {
 
     @GetMapping(path = "getUserInfo")
     @ResponseStatus(HttpStatus.OK)
-    public Users getUserByMail(@RequestParam String email) {
-        return userService.getUserByEmail(email);
+    public ResponseEntity<UserInfoResponseDTO>getUserByMail(@RequestParam String email) {
+        return new ResponseEntity<>(userService.getUserInfo(email), HttpStatus.OK);
+
     }
 
 

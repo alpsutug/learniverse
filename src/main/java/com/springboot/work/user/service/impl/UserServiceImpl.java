@@ -2,6 +2,9 @@ package com.springboot.work.user.service.impl;
 
 import com.springboot.work.auth.repository.PasswordResetTokenRepository;
 import com.springboot.work.auth.repository.VerificationTokenRepository;
+import com.springboot.work.quiz.entity.QuizResult;
+import com.springboot.work.quiz.repository.QuizResultRepository;
+import com.springboot.work.user.dto.UserInfoResponseDTO;
 import com.springboot.work.user.dto.UserRequestDTO;
 import com.springboot.work.user.dto.UserResponseDTO;
 import com.springboot.work.user.entity.Users;
@@ -12,19 +15,25 @@ import com.springboot.work.util.WorkMessageDTO;
 import com.springboot.work.util.WorkMessageType;
 import com.springboot.work.util.WorkMessageUtil;
 
+import com.springboot.work.word.entity.Word;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import static com.springboot.work.util.WorkConstant.*;
 
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
 
@@ -33,14 +42,9 @@ public class UserServiceImpl implements UserService {
     private final WorkMessageUtil workMessageUtil;
     private final VerificationTokenRepository verificationTokenRepository;
     private final PasswordResetTokenRepository passwordResetTokenRepository;
+    private final QuizResultRepository quizResultRepository;
 
 
-    public UserServiceImpl(UserRepository userRepository, WorkMessageUtil workMessageUtil, VerificationTokenRepository verificationTokenRepository, PasswordResetTokenRepository passwordResetTokenRepository) {
-        this.userRepository = userRepository;
-        this.workMessageUtil = workMessageUtil;
-        this.verificationTokenRepository = verificationTokenRepository;
-        this.passwordResetTokenRepository = passwordResetTokenRepository;
-    }
 
 
     @Override
@@ -222,8 +226,49 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username);
     }
 
-    public Users getUserByEmail(String email) {
-        return userRepository.findByEmail(email);
+    @Override
+    public UserInfoResponseDTO getUserInfo(String email) {
+
+        return userRepository
+                .findByEmailIgnoreCase(email)           // Optional<Users>
+                .map(this::toUserInfoDto)               // Optional<UserInfoResponseDTO>
+                .orElseThrow(() ->                     // UserInfoResponseDTO
+                        new EntityNotFoundException("User not found")
+                );
+    }
+
+    /* ---------- yardımcı dönüştürme ---------- */
+    private UserInfoResponseDTO toUserInfoDto(Users user) {
+
+
+        /* 1) Kullanıcının tüm quiz sonuçlarını çek */
+        List<QuizResult> results = quizResultRepository.findByUserEmail(user.getEmail());
+
+        int totalQuestions = results.stream()
+                .mapToInt(QuizResult::getTotalQuestions)
+                .sum();
+        int totalCorrect   = results.stream()
+                .mapToInt(QuizResult::getCorrectAnswers)
+                .sum();
+
+        double successRate = totalQuestions == 0
+                ? 0.0
+                : (double) totalCorrect / totalQuestions;   // 0-1 arası oran
+
+        double rate = successRate * 100;
+
+        /* 2) DTO’yu doldur */
+        UserInfoResponseDTO dto = new UserInfoResponseDTO();
+        dto.setName(user.getName());
+        dto.setSurname(user.getSurname());
+        dto.setUsername(user.getUsername());
+        dto.setAge(String.valueOf(user.getAge()));
+        dto.setEmail(user.getEmail());
+        dto.setSuccessRate(rate);
+        dto.setLevel("A1");                       // ← seviyeyi nasıl hesaplıyorsan
+
+        return dto;
     }
 
 }
+

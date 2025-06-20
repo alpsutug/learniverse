@@ -1,6 +1,7 @@
 package com.springboot.work.user.service;
 
 
+import com.springboot.work.user.dto.UserInfoResponseDTO;
 import com.springboot.work.user.dto.UserRequestDTO;
 import com.springboot.work.user.dto.UserResponseDTO;
 import com.springboot.work.user.entity.Users;
@@ -15,7 +16,7 @@ public interface UserService {
     List<Users> getAllList();
     List<Users> getUserByName(String name);
     Users getUserByUserName(String username);
-    Users getUserByEmail(String email);
+    UserInfoResponseDTO getUserInfo(String email);
 
 
 }
