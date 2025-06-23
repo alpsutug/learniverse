@@ -22,7 +22,7 @@ public class SwaggerConfig {
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
                 .group("learnverse-public")
-                .pathsToMatch("/auth/**", "/quiz/**", "/user/**")
+                .pathsToMatch("/auth/**", "/quiz/**", "/user/**","/words/**")
                 .build();
     }
 }
