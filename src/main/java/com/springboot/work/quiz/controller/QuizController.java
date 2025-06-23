@@ -62,4 +62,21 @@ public class QuizController {
 
     // yeni bir tablo oluşturulup bu değerleri orada tutmalıyız totalleri
 
+    @GetMapping("/mixed")
+    public List<QuizQuestion> getMixedQuiz(
+            @RequestParam String level,
+            @RequestParam(defaultValue = "10") int count,
+            @RequestParam(required = false) List<String> categories) {
+
+        return quizService.mixCategory(level, categories, count);
+    }
+
+    @GetMapping("/random")
+    public List<QuizQuestion> getRandomQuiz(
+            @RequestParam(defaultValue = "10") int count) {
+
+        return quizService.randomMixedQuiz(count);
+    }
+
+
 }

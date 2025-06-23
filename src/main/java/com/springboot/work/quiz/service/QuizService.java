@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -51,7 +52,6 @@ public class QuizService {
 
         return quizQuestions;
     }
-
 
 
     public QuizResultResponse checkAnswers(QuizAnswerRequest request) {
@@ -101,7 +101,8 @@ public class QuizService {
         for (QuizAnswerRequest.Answer answer : request.getAnswers()) {
             if (!seen.add(answer.getEnglish())) {
                 throw new IllegalArgumentException("Aynı kelime birden fazla kez gönderilemez: " + answer.getEnglish());
-            }}   // bu hata console da geliyor serviste 403 atıyor bunu da düzlet
+            }
+        }   // bu hata console da geliyor serviste 403 atıyor bunu da düzlet
 
         QuizResult quizResult = new QuizResult();
         quizResult.setUserEmail(request.getUserEmail());
@@ -117,5 +118,82 @@ public class QuizService {
     }
 
 
+    public List<QuizQuestion> mixCategory(String level,
+                                          List<String> categories,
+                                          int count) {
+
+        /* 1) Havuzu oluştur */
+        List<Word> pool = wordService.getAllWords().stream()
+                .filter(w -> w.getLevel().equalsIgnoreCase(level))               // seviye
+                .filter(w -> categories == null || categories.isEmpty()          // kategori
+                        || categories.stream().anyMatch(
+                        c -> c.equalsIgnoreCase(
+                                Optional.ofNullable(w.getCategory())
+                                        .orElse("")
+                        )))
+                .collect(Collectors.toList());
+
+        if (pool.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "Bu seviye / kategorilerde yeterli kelime yok!");
+        }
+
+        /* 2) Rastgele <count> kelime seç */
+        Collections.shuffle(pool);
+        List<Word> selected = pool.subList(0, Math.min(count, pool.size()));
+
+        /* 3) QuizQuestion’a dönüştür */
+        return selected.stream()
+                .map(this::toQuizQuestion)
+                .toList();
+    }
+
+    /* ------------------------------------------------------ */
+
+    /**
+     * Word → QuizQuestion çevirisi (tek doğru + 3 yanlış şık üretir)
+     */
+    private QuizQuestion toQuizQuestion(Word correctWord) {
+
+        // aynı seviyeden rastgele 3 yanlış anlam
+        List<String> wrongPool = wordService.getByLevel(correctWord.getLevel())
+                .stream()
+                .filter(w -> !w.getMeaning()
+                        .equalsIgnoreCase(
+                                correctWord.getMeaning()))
+                .map(Word::getMeaning)
+                .collect(Collectors.toList());
+        Collections.shuffle(wrongPool);
+
+        Set<String> options = new HashSet<>();
+        options.add(correctWord.getMeaning());
+        options.addAll(wrongPool.subList(0,
+                Math.min(3, wrongPool.size())));   // maks. 3 yanlış
+
+        List<String> shuffled = new ArrayList<>(options);
+        Collections.shuffle(shuffled);
+
+        return new QuizQuestion(
+                correctWord.getWord(),         // soru (İngilizce)
+                shuffled,                      // şıklar
+                correctWord.getMeaning());     // doğru cevap
+    }
+
+    public List<QuizQuestion> randomMixedQuiz(int count) {
+
+        // 1) Tüm kelimeleri çek
+        List<Word> pool = wordService.getAllWords();   // JSON’dan gelen liste
+
+        // 2) Karıştır
+        Collections.shuffle(pool);
+
+        // 3) İstenen sayıda kelime seç
+        List<Word> selected = pool.subList(0, Math.min(count, pool.size()));
+
+        // 4) QuizQuestion’a dönüştür
+        return selected.stream()
+                .map(this::toQuizQuestion)
+                .collect(Collectors.toList());
+    }
 
 }

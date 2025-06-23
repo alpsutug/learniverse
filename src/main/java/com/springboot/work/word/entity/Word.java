@@ -1,9 +1,19 @@
 package com.springboot.work.word.entity;
 
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Data
+@Entity
+@Getter
+@Setter
+@Table(name = "word")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Word {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String word;
     private String meaning;
     private String level;     // A1, A2, B1...

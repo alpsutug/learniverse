@@ -1,9 +1,14 @@
 package com.springboot.work.quiz.dto;
 
-import lombok.Data;
+import lombok.*;
+
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor       // <-- EKLEYİN
+
 public class QuizQuestion { //ismi değiş dto ekle ayrıca servic serviceimpl ekle hem word e hem buraya
     private String question;             // İngilizce kelime
     private List<String> options;        // 4 Türkçe şık

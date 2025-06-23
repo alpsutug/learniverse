@@ -5,16 +5,24 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springboot.work.word.entity.Word;
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
+import org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor;
 import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class WordService {
 
+    private final OpenEntityManagerInViewInterceptor openEntityManagerInViewInterceptor;
     private List<Word> allWords;
+
+
+
 
     @PostConstruct
     public void init() {
@@ -54,4 +62,25 @@ public class WordService {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Kelime bulunamadı: " + word));
     }
+
+
+
+    /* ---------- SEVİYEYE GÖRE RASTGELE KELİME ---------- */
+    public List<Word> getRandomWordsByLevel(String level, int count) {
+
+        // 1) Belirtilen seviyedeki kelimeleri süz
+        List<Word> pool = allWords.stream()
+                .filter(w -> w.getLevel()
+                        .equalsIgnoreCase(level))
+                .collect(Collectors.toList());
+
+        // 2) Karıştır
+        Collections.shuffle(pool);
+
+        // 3) İstenen sayıyı döndür  (eldeki kelime sayısından büyükse hepsini ver)
+        return pool.subList(0, Math.min(count, pool.size()));
+    }
+
+    /* Diğer metotlar (getAllWords, getByLevel vs.) aynen kalabilir */
+
 }
