@@ -1,7 +1,7 @@
 package com.springboot.work.word.controller;
 
 import com.springboot.work.word.entity.Word;
-import com.springboot.work.word.service.WordService;
+import com.springboot.work.word.service.impl.WordServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,26 +12,26 @@ import java.util.List;
 @RequiredArgsConstructor
 public class WordController {
 
-    private final WordService wordService;
+    private final WordServiceImpl wordServiceImpl;
 
     @GetMapping
     public List<Word> getAllWords() {
-        return wordService.getAllWords();
+        return wordServiceImpl.getAllWords();
     }
 
     @GetMapping("/level/{level}")
     public List<Word> getByLevel(@PathVariable String level) {
-        return wordService.getByLevel(level);
+        return wordServiceImpl.getByLevel(level);
     }
 
     @GetMapping("/category/{category}")
     public List<Word> getByCategory(@PathVariable String category) {
-        return wordService.getByCategory(category);
+        return wordServiceImpl.getByCategory(category);
     }
 
     @GetMapping("/filter")
     public List<Word> getByLevelAndCategory(@RequestParam String level, @RequestParam String category) {
-        return wordService.getByLevelAndCategory(level, category);
+        return wordServiceImpl.getByLevelAndCategory(level, category);
     }
 
     @GetMapping("/quiz")
@@ -39,6 +39,6 @@ public class WordController {
             @RequestParam String level,
             @RequestParam(defaultValue = "10") int count) {
 
-        return wordService.getRandomWordsByLevel(level, count);
+        return wordServiceImpl.getRandomWordsByLevel(level, count);
     }
 }

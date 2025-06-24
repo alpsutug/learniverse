@@ -7,7 +7,7 @@ import com.springboot.work.quiz.entity.QuizResult;
 import com.springboot.work.quiz.repository.QuizResultRepository;
 import com.springboot.work.quiz.service.QuizService;
 import com.springboot.work.word.entity.Word;
-import com.springboot.work.word.service.WordService;
+import com.springboot.work.word.service.impl.WordServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +19,12 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class QuizServiceImpl implements QuizService {
 
-    private final WordService wordService;
+    private final WordServiceImpl wordServiceImpl;
     private final QuizResultRepository quizResultRepository;
 
     @Override
     public List<QuizQuestion> generateQuiz(String level, String category, int questionCount) {
-        List<Word> wordPool = wordService.getByLevelAndCategory(level, category);
+        List<Word> wordPool = wordServiceImpl.getByLevelAndCategory(level, category);
         Collections.shuffle(wordPool);
 
         List<QuizQuestion> quizQuestions = new ArrayList<>();
@@ -61,7 +61,7 @@ public class QuizServiceImpl implements QuizService {
         List<QuizResultResponse.ResultDetail> detailList = new ArrayList<>();
 
         for (QuizAnswerRequest.Answer answer : request.getAnswers()) {
-            Word word = wordService.getWordByEnglish(answer.getEnglish());
+            Word word = wordServiceImpl.getWordByEnglish(answer.getEnglish());
             boolean isCorrect = word.getMeaning().equalsIgnoreCase(answer.getSelected());
 
             if (isCorrect) correctCount++;
@@ -125,7 +125,7 @@ public class QuizServiceImpl implements QuizService {
                                           int count) {
 
         /* 1) Havuzu oluştur */
-        List<Word> pool = wordService.getAllWords().stream()
+        List<Word> pool = wordServiceImpl.getAllWords().stream()
                 .filter(w -> w.getLevel().equalsIgnoreCase(level))               // seviye
                 .filter(w -> categories == null || categories.isEmpty()          // kategori
                         || categories.stream().anyMatch(
@@ -159,7 +159,7 @@ public class QuizServiceImpl implements QuizService {
     public QuizQuestion toQuizQuestion(Word correctWord) {
 
         // aynı seviyeden rastgele 3 yanlış anlam
-        List<String> wrongPool = wordService.getByLevel(correctWord.getLevel())
+        List<String> wrongPool = wordServiceImpl.getByLevel(correctWord.getLevel())
                 .stream()
                 .filter(w -> !w.getMeaning()
                         .equalsIgnoreCase(
@@ -186,7 +186,7 @@ public class QuizServiceImpl implements QuizService {
     public List<QuizQuestion> randomMixedQuiz(int count) {
 
         // 1) Tüm kelimeleri çek
-        List<Word> pool = wordService.getAllWords();   // JSON’dan gelen liste
+        List<Word> pool = wordServiceImpl.getAllWords();   // JSON’dan gelen liste
 
         // 2) Karıştır
         Collections.shuffle(pool);

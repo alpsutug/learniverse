@@ -1,86 +1,15 @@
 package com.springboot.work.word.service;
 
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springboot.work.word.entity.Word;
-import jakarta.annotation.PostConstruct;
-import lombok.RequiredArgsConstructor;
-import org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor;
-import org.springframework.stereotype.Service;
 
-import java.io.InputStream;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
-@Service
-@RequiredArgsConstructor
-public class WordService {
+public interface WordService {
 
-    private final OpenEntityManagerInViewInterceptor openEntityManagerInViewInterceptor;
-    private List<Word> allWords;
-
-
-
-
-    @PostConstruct
-    public void init() {
-        try (InputStream is = getClass().getClassLoader().getResourceAsStream("data/words.json")) {
-            ObjectMapper mapper = new ObjectMapper();
-            allWords = mapper.readValue(is, new TypeReference<>() {});
-        } catch (Exception e) {
-            throw new RuntimeException("Kelime verisi yüklenemedi!", e);
-        }
-    }
-
-    public List<Word> getAllWords() {
-        return allWords;
-    }
-
-    public List<Word> getByLevel(String level) {
-        return allWords.stream()
-                .filter(w -> w.getLevel().equalsIgnoreCase(level))
-                .collect(Collectors.toList());
-    }
-
-    public List<Word> getByCategory(String category) {
-        return allWords.stream()
-                .filter(w -> category.equalsIgnoreCase(w.getCategory()))
-                .collect(Collectors.toList());
-    }
-
-    public List<Word> getByLevelAndCategory(String level, String category) {
-        return allWords.stream()
-                .filter(w -> w.getLevel().equalsIgnoreCase(level) && category.equalsIgnoreCase(w.getCategory()))
-                .collect(Collectors.toList());
-    }
-
-    public Word getWordByEnglish(String word) {
-        return allWords.stream()
-                .filter(w -> w.getWord().equalsIgnoreCase(word))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Kelime bulunamadı: " + word));
-    }
-
-
-
-    /* ---------- SEVİYEYE GÖRE RASTGELE KELİME ---------- */
-    public List<Word> getRandomWordsByLevel(String level, int count) {
-
-        // 1) Belirtilen seviyedeki kelimeleri süz
-        List<Word> pool = allWords.stream()
-                .filter(w -> w.getLevel()
-                        .equalsIgnoreCase(level))
-                .collect(Collectors.toList());
-
-        // 2) Karıştır
-        Collections.shuffle(pool);
-
-        // 3) İstenen sayıyı döndür  (eldeki kelime sayısından büyükse hepsini ver)
-        return pool.subList(0, Math.min(count, pool.size()));
-    }
-
-    /* Diğer metotlar (getAllWords, getByLevel vs.) aynen kalabilir */
-
+    List<Word> getAllWords();
+    List<Word> getByLevel(String level);
+    List<Word> getByCategory(String category);
+    List<Word> getByLevelAndCategory(String level, String category);
+    Word getWordByEnglish(String word);
+    List<Word> getRandomWordsByLevel(String level, int count);
 }
