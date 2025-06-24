@@ -45,26 +45,26 @@ public class UserController {
     }
 
 
-    @GetMapping(path = "getAllList")
+    @GetMapping(path = "/getAllList")
     @ResponseStatus(HttpStatus.OK)
     public List<Users> getAllList() {
         return userService.getAllList();
     }
 
-    @GetMapping(path = "getUserByName")
+    @GetMapping(path = "/getUserByName")
     @ResponseStatus(HttpStatus.OK)
     public List<Users> getUserByName(@RequestParam String name) {
         return userService.getUserByName(name);
 
     }
 
-    @GetMapping(path = "getUserByUserName")
+    @GetMapping(path = "/getUserByUserName")
     @ResponseStatus(HttpStatus.OK)
     public Users getUserByUserName(@RequestParam String username) {
         return userService.getUserByUserName(username);
     }
 
-    @GetMapping(path = "getUserInfo")
+    @GetMapping(path = "/getUserInfo")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<UserInfoResponseDTO>getUserByMail(@RequestParam String email) {
         return new ResponseEntity<>(userService.getUserInfo(email), HttpStatus.OK);

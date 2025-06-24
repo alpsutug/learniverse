@@ -6,14 +6,16 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-@Getter @Setter @NoArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
 public class PasswordResetToken {
 
     @Id
     private String token;          // UUID string
 
     @Column(nullable = false)
-    private String email;          // Kullanıcının maili
+    private String email;
 
     @Column(nullable = false)
     private Instant expiresAt;     // Süre dolma

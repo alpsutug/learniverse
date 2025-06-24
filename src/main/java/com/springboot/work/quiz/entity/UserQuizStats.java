@@ -2,10 +2,16 @@ package com.springboot.work.quiz.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Data;
+import jakarta.persistence.Table;
+import lombok.*;
 
-@Data
 @Entity
+@Table(name = "user_quiz_stats")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class UserQuizStats {
 
     @Id

@@ -13,7 +13,7 @@ public class UserRequestDTO {
     private String username;
     private String password;
     private String email;
-    private String age;
+    private Integer age;
 
 
 }

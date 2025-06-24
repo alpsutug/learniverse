@@ -7,9 +7,11 @@ import com.springboot.work.auth.repository.PasswordResetTokenRepository;
 import com.springboot.work.auth.repository.VerificationTokenRepository;
 import com.springboot.work.auth.service.AuthService;
 import com.springboot.work.security.JwtTokenProvider;
+import com.springboot.work.user.dto.UserResponseDTO;
 import com.springboot.work.user.entity.Users;
 import com.springboot.work.user.repository.UserRepository;
 import com.springboot.work.util.WorkBusinessException;
+import com.springboot.work.util.WorkMessageDTO;
 import com.springboot.work.util.WorkMessageType;
 import com.springboot.work.util.WorkMessageUtil;
 import jakarta.transaction.Transactional;
@@ -18,6 +20,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
+import java.util.List;
+
+import static com.springboot.work.util.WorkConstant.*;
 
 @Service
 @RequiredArgsConstructor
@@ -37,7 +43,7 @@ public class AuthServiceImpl implements AuthService {
     /* ---------- REGISTER ---------- */
     @Override
     @Transactional
-    public void register(@Valid RegisterRequestDTO req) {
+    public UserResponseDTO register(@Valid RegisterRequestDTO req) {
 
 
         if (!StringUtils.hasText(req.getEmail()) || !StringUtils.hasText(req.getPassword())) {
@@ -68,6 +74,16 @@ public class AuthServiceImpl implements AuthService {
 
         /* — Aktivasyon e-postası gönder — */
         mailService.sendActivationMail(u.getEmail(), vToken.getToken());
+
+        WorkMessageDTO successMessage = WorkMessageDTO.builder()
+                .type(WorkMessageType.SUCCESS)
+                .text(USER_SAVED_SUCCESS)
+                .build();
+
+        return UserResponseDTO.builder()
+                .userId(u.getId())
+                .msg(List.of(successMessage))
+                .build();
     }
 
     /* ---------- LOGIN ---------- */
@@ -94,11 +110,11 @@ public class AuthServiceImpl implements AuthService {
     /* ---------- FORGOT PASSWORD ---------- */
     @Override
     @Transactional
-    public void sendResetToken(ForgotPasswordRequestDTO req) {
+    public UserResponseDTO sendResetToken(ForgotPasswordRequestDTO req) {
         Users user = userRepository.findByEmail(req.getEmail());
         if (user == null) {
             // Bilinçli olarak HATA vermiyoruz: kullanıcı var/yok bilgisini sızdırma
-            return;
+            return UserResponseDTO.builder().build();
         }
         PasswordResetToken token = new PasswordResetToken(user.getEmail(), TOKEN_TTL_MIN);
 
@@ -110,12 +126,22 @@ public class AuthServiceImpl implements AuthService {
 
         // Şimdi token'ı DB'ye kaydet
         tokenRepo.save(token);
+
+        WorkMessageDTO successMessage = WorkMessageDTO.builder()
+                .type(WorkMessageType.SUCCESS)
+                .text(FORGOT_PASSWORD)
+                .build();
+
+        return UserResponseDTO.builder()
+                .userId(user.getId())
+                .msg(List.of(successMessage))
+                .build();
     }
 
     /* ---------- RESET PASSWORD ---------- */
     @Override
     @Transactional
-    public void resetPassword(ResetPasswordRequestDTO req) {
+    public UserResponseDTO resetPassword(ResetPasswordRequestDTO req) {
         PasswordResetToken token = tokenRepo.findById(req.getToken())
                 .orElseThrow(() -> new WorkBusinessException(
                         msgUtil.createWorkMessageWithCode("token.gecersiz", WorkMessageType.ERROR)));
@@ -134,7 +160,59 @@ public class AuthServiceImpl implements AuthService {
 
         user.setPassword(encoder.encode(req.getNewPassword()));
         userRepository.save(user);
-        tokenRepo.delete(token);        // tek kullanım
+        tokenRepo.delete(token);
+
+        WorkMessageDTO successMessage = WorkMessageDTO.builder()
+                .type(WorkMessageType.SUCCESS)
+                .text(RESET_PASSWORD)
+                .build();
+
+        return UserResponseDTO.builder()
+                .userId(user.getId())
+                .msg(List.of(successMessage))
+                .build();// tek kullanım
+
+    }
+
+
+    @Override
+    @Transactional
+    public UserResponseDTO verifyAccount(String token) {
+
+        VerificationToken vt = verificationTokenRepository.findById(token)
+                .orElseThrow(() -> new WorkBusinessException(
+                        msgUtil.createWorkMessageWithCode(
+                                "dogrulama.token.gecersiz", WorkMessageType.ERROR)));
+
+        if (vt.isExpired()) {
+            verificationTokenRepository.delete(vt);
+            throw new WorkBusinessException(
+                    msgUtil.createWorkMessageWithCode(
+                            "dogrulama.token.suresi.doldu", WorkMessageType.ERROR));
+        }
+
+        Users user = userRepository.findByEmail(vt.getEmail());
+        if (user == null) {
+            throw new WorkBusinessException(
+                    msgUtil.createWorkMessageWithCode(
+                            "kullanici.bulunamadi", WorkMessageType.ERROR));
+        }
+
+        user.setEnabled(true);
+        userRepository.save(user);
+
+        vt.setUsed(true);                      // veya verificationTokenRepository.delete(vt);
+        verificationTokenRepository.save(vt);
+
+        WorkMessageDTO successMessage = WorkMessageDTO.builder()
+                .type(WorkMessageType.SUCCESS)
+                .text(VERIFY_ACCOUNT)
+                .build();
+
+        return UserResponseDTO.builder()
+                .userId(user.getId())
+                .msg(List.of(successMessage))
+                .build();// tek kullanım
     }
 }
 

@@ -1,4 +1,3 @@
-// auth/repository/VerificationTokenRepository.java
 package com.springboot.work.auth.repository;
 
 import com.springboot.work.auth.entity.VerificationToken;

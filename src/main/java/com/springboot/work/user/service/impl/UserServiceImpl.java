@@ -107,7 +107,7 @@ public class UserServiceImpl implements UserService {
             throw new WorkBusinessException(workMessageUtil.createWorkMessageWithCode("password.bos.olamaz", WorkMessageType.ERROR));
 
         }
-        if (!StringUtils.hasText(userRequestDTO.getAge())) {
+        if (userRequestDTO.getAge() == null) {
             throw new WorkBusinessException(workMessageUtil.createWorkMessageWithCode("age.bos.olamaz", WorkMessageType.ERROR));
         }
     }
@@ -118,8 +118,7 @@ public class UserServiceImpl implements UserService {
                 !StringUtils.hasText(dto.getSurname()) &&
                 !StringUtils.hasText(dto.getEmail()) &&
                 !StringUtils.hasText(dto.getPassword()) &&
-                !StringUtils.hasText(dto.getAge());
-    }
+                dto.getAge() == null;    }
 
 
     @Override
@@ -262,7 +261,7 @@ public class UserServiceImpl implements UserService {
         dto.setName(user.getName());
         dto.setSurname(user.getSurname());
         dto.setUsername(user.getUsername());
-        dto.setAge(String.valueOf(user.getAge()));
+        dto.setAge(user.getAge());
         dto.setEmail(user.getEmail());
         dto.setSuccessRate(rate);
         dto.setLevel("A1");                       // ← seviyeyi nasıl hesaplıyorsan

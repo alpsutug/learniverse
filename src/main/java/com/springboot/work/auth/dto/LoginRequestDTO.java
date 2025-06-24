@@ -2,9 +2,12 @@ package com.springboot.work.auth.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class LoginRequestDTO {
     @Email(message = "E-posta formatı hatalı")
     @NotBlank(message = "E-posta zorunludur")

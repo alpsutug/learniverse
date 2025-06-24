@@ -29,7 +29,7 @@ public class Users {
     private String password;
 
     @Column(name = "age")
-    private String age;
+    private int age;
 
     @Column(name = "email")
     private String email;

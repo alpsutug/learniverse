@@ -15,7 +15,7 @@ public class UserInfoResponseDTO {
 
     private String username;
 
-    private String age;
+    private int age;
 
     private String email;
 

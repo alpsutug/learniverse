@@ -1,13 +1,15 @@
 package com.springboot.work.auth.dto;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-/**
- * Token + yeni şifre taşıyan DTO.
- */
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class ResetPasswordRequestDTO {
 
     @NotBlank(message = "Token zorunludur")

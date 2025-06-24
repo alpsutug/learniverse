@@ -1,4 +1,3 @@
-// src/main/java/com/springboot/work/auth/entity/VerificationToken.java
 package com.springboot.work.auth.entity;
 
 import jakarta.persistence.*;
@@ -7,7 +6,9 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-@Getter @Setter @NoArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
 public class VerificationToken {
 
     @Id

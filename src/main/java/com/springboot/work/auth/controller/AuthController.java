@@ -4,6 +4,7 @@ import com.springboot.work.auth.dto.*;
 import com.springboot.work.auth.entity.VerificationToken;
 import com.springboot.work.auth.repository.VerificationTokenRepository;
 import com.springboot.work.auth.service.AuthService;
+import com.springboot.work.user.dto.UserResponseDTO;
 import com.springboot.work.user.entity.Users;
 import com.springboot.work.user.repository.UserRepository;
 import com.springboot.work.util.WorkBusinessException;
@@ -20,14 +21,10 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final AuthService authService;
-    private final VerificationTokenRepository verificationTokenRepository;
-    private final UserRepository usersRepository;
-    private final WorkMessageUtil msgUtil;
 
     @PostMapping("/register")
-    public ResponseEntity<Void> register(@RequestBody @Valid RegisterRequestDTO req) {
-        authService.register(req);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<UserResponseDTO> register(@RequestBody @Valid RegisterRequestDTO req) {
+        return new ResponseEntity<>(authService.register(req), HttpStatus.OK);
     }
 
     @PostMapping("/login")
@@ -37,48 +34,19 @@ public class AuthController {
 
     // şifre eski şifre ile aynı olamaz
 
-
-
     @PostMapping("/forgot-password")
-    public ResponseEntity<Void> forgot(@RequestBody @Valid ForgotPasswordRequestDTO req) {
-        authService.sendResetToken(req);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<UserResponseDTO> forgot(@RequestBody @Valid ForgotPasswordRequestDTO req) {
+        return new ResponseEntity<>(authService.sendResetToken(req), HttpStatus.OK);
     }
 
     @PostMapping("/reset-password")
-    public ResponseEntity<Void> reset(@RequestBody @Valid ResetPasswordRequestDTO req) {
-        authService.resetPassword(req);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<UserResponseDTO> reset(@RequestBody @Valid ResetPasswordRequestDTO req) {
+        return new ResponseEntity<>(authService.resetPassword(req), HttpStatus.OK);
     }
 
     @GetMapping("/verify")
-    public ResponseEntity<String> verify(@RequestParam String token) {
-
-        VerificationToken vt = verificationTokenRepository.findById(token)
-                .orElseThrow(() -> new WorkBusinessException(
-                        msgUtil.createWorkMessageWithCode("dogrulama.token.gecersiz", WorkMessageType.ERROR)));
-
-        if (vt.isExpired()) {
-            verificationTokenRepository.delete(vt);
-            throw new WorkBusinessException(
-                    msgUtil.createWorkMessageWithCode("dogrulama.token.suresi.doldu", WorkMessageType.ERROR));
-        }
-
-        Users user = usersRepository.findByEmail(vt.getEmail());   // ✔ doğru repo ismi
-        if (user == null) {
-            throw new WorkBusinessException(
-                    msgUtil.createWorkMessageWithCode("kullanici.bulunamadi", WorkMessageType.ERROR));
-        }
-
-        user.setEnabled(true);
-        usersRepository.save(user);
-
-        vt.setUsed(true);               // isteğe bağlı: delete(vt) yapabilirsin
-        verificationTokenRepository.save(vt);
-
-        return ResponseEntity.ok("Hesabınız aktifleştirildi, giriş yapabilirsiniz.");
+    public ResponseEntity<UserResponseDTO> verify(@RequestParam String token) {
+        return ResponseEntity.ok(authService.verifyAccount(token));
     }
-
-
 
 }

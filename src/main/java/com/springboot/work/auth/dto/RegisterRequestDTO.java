@@ -4,9 +4,12 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor              // JSON deserialization için
+@AllArgsConstructor
 public class RegisterRequestDTO {
 
     @Email(message = "E-posta formatı hatalı")
@@ -21,9 +24,8 @@ public class RegisterRequestDTO {
             message = "Şifre en az 1 büyük, 1 küçük harf, 1 rakam ve 1 sembol içermeli"
     )
     private String password;
-
-    // Profil amaçlı, opsiyonel
     private String username;
     private String name;
     private String surname;
+    private Integer age;
 }

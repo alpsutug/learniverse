@@ -4,7 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e554961-6099-4495-a439-30d786a0bc1c" name="Changes" comment="webconfig eklendi" />
+    <list default="true" id="3e554961-6099-4495-a439-30d786a0bc1c" name="Changes" comment="webconfig eklendi">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/impl/QuizServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/ForgotPasswordRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/ForgotPasswordRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/JwtResponseDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/JwtResponseDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/LoginRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/LoginRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/RegisterRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/RegisterRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/ResetPasswordRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/dto/ResetPasswordRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/entity/PasswordResetToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/entity/PasswordResetToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/entity/VerificationToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/entity/VerificationToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/service/AuthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/service/impl/AuthServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/service/impl/AuthServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/controller/QuizController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/controller/QuizController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/dto/QuizAnswerRequest$Answer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/dto/QuizAnswerRequest$Answer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/dto/QuizAnswerRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/dto/QuizAnswerRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/dto/QuizResultResponse$ResultDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/dto/QuizResultResponse$ResultDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/dto/QuizResultResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/dto/QuizResultResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/entity/QuizResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/entity/QuizResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/entity/UserQuizStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/entity/UserQuizStats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/service/QuizService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/service/QuizService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/user/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/user/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/user/dto/UserRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/user/dto/UserRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/user/entity/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/user/entity/Users.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/user/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/user/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/util/WorkConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/util/WorkConstant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/ForgotPasswordRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/ForgotPasswordRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/JwtResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/JwtResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/LoginRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/LoginRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/RegisterRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/RegisterRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/ResetPasswordRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/dto/ResetPasswordRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/entity/PasswordResetToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/entity/PasswordResetToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/entity/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/entity/VerificationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/repository/VerificationTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/repository/VerificationTokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/controller/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/dto/QuizAnswerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/dto/QuizAnswerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/dto/QuizResultResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/dto/QuizResultResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/entity/QuizResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/entity/QuizResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/entity/UserQuizStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/entity/UserQuizStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/QuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/QuizService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/dto/UserInfoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/dto/UserInfoResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/dto/UserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/dto/UserRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/user/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/util/WorkConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/util/WorkConstant.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +101,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -79,6 +131,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build learniverse.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
     "Gradle.learniverse [build].executor": "Run",
     "Gradle.learniverse [clean].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -88,7 +141,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.WorkApplication.executor": "Debug",
+    "Spring Boot.WorkApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -197,6 +250,10 @@
       <workItem from="1749638982515" duration="3226000" />
       <workItem from="1749670450442" duration="835000" />
       <workItem from="1749801178664" duration="6349000" />
+      <workItem from="1750256360614" duration="28257000" />
+      <workItem from="1750533593128" duration="10880000" />
+      <workItem from="1750720633946" duration="6000" />
+      <workItem from="1750766976589" duration="11108000" />
     </task>
     <task id="LOCAL-00001" summary="isActive eklendi">
       <option name="closed" value="true" />
@@ -254,7 +311,87 @@
       <option name="project" value="LOCAL" />
       <updated>1750200401010</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750337195717</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1750337195717</updated>
+    </task>
+    <task id="LOCAL-00009" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750338546529</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1750338546529</updated>
+    </task>
+    <task id="LOCAL-00010" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750338862797</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1750338862797</updated>
+    </task>
+    <task id="LOCAL-00011" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750431980100</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1750431980100</updated>
+    </task>
+    <task id="LOCAL-00012" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750432004738</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1750432004738</updated>
+    </task>
+    <task id="LOCAL-00013" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750460470481</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1750460470481</updated>
+    </task>
+    <task id="LOCAL-00014" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750460629823</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1750460629823</updated>
+    </task>
+    <task id="LOCAL-00015" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750706613484</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1750706613484</updated>
+    </task>
+    <task id="LOCAL-00016" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750706627940</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1750706627940</updated>
+    </task>
+    <task id="LOCAL-00017" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750706757395</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1750706757395</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,9 +406,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springboot/work/auth/controller/AuthController.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/impl/AuthServiceImpl.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/controller/QuizController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/impl/QuizServiceImpl.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springboot/work/user/controller/UserController.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springboot/work/user/service/impl/UserServiceImpl.java</url>
+          <line>231</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
