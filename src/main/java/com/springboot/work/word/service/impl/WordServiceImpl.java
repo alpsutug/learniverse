@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -96,5 +97,20 @@ public class WordServiceImpl implements WordService {
     public List<Word> getFavoriWords() {
         return wordRepository.findByIsFavoriTrue();
     }
+
+    @Override
+    public List<Word> getByCategories(List<String> categories) {
+        if (categories == null || categories.isEmpty()) {
+            return allWords; // hiçbir kategori verilmediyse tüm kelimeleri döner
+        }
+
+        return allWords.stream()
+                .filter(w -> categories.stream()
+                        .anyMatch(cat -> cat.equalsIgnoreCase(
+                                Optional.ofNullable(w.getCategory()).orElse("")
+                        )))
+                .collect(Collectors.toList());
+    }
+
 
 }

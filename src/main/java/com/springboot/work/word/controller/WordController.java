@@ -53,9 +53,16 @@ public class WordController {
 
     }
 
-
     @GetMapping("/favori")
     public ResponseEntity<List<Word>> getFavoriWords() {
         return ResponseEntity.ok(wordService.getFavoriWords());
     }
+
+    @GetMapping("/by-categories")
+    public List<Word> getWordsByCategories(@RequestParam(required = false) List<String> categories) {
+        return wordService.getByCategories(categories);
+    }
+
+
+
 }

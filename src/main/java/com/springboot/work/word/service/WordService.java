@@ -15,5 +15,6 @@ public interface WordService {
     List<Word> getRandomWordsByLevel(String level, int count);
     Word getWordName(String word);
     List<Word> getFavoriWords();
+    List<Word> getByCategories(List<String> categories);
 
 }
