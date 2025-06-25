@@ -55,9 +55,7 @@ public class QuizController {
     }
 
     @GetMapping("/daily-quota")
-    public ResponseEntity<Map<String, Object>> getDailyQuota(
-            @RequestParam String email,
-            @RequestParam(defaultValue = "10") int target) {
+    public ResponseEntity<Map<String, Object>> getDailyQuota(@RequestParam String email, @RequestParam(defaultValue = "10") int target) {
 
         int remaining = quizServiceImpl.getRemainingDailyQuota(email, target);
         Map<String, Object> result = new HashMap<>();
