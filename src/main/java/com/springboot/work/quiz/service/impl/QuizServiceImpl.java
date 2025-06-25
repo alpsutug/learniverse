@@ -219,4 +219,18 @@ public class QuizServiceImpl implements QuizService {
         return response;
     }
 
+    @Override
+    public int getRemainingDailyQuota(String email, int dailyTarget) {
+        LocalDateTime todayStart = LocalDateTime.now().toLocalDate().atStartOfDay();
+        LocalDateTime todayEnd = todayStart.plusDays(1);
+
+        int todayQuizCount = quizResultRepository.findByUserEmail(email).stream()
+                .filter(qr -> !qr.getTimestamp().isBefore(todayStart) &&
+                        qr.getTimestamp().isBefore(todayEnd))
+                .mapToInt(qr -> 1) // her bir sonucu 1 say
+                .sum();
+
+        return Math.max(0, dailyTarget - todayQuizCount);
+    }
+
 }

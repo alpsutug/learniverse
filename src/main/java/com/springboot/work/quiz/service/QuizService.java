@@ -15,4 +15,5 @@ public interface QuizService {
     List<QuizQuestion> mixCategory(String level, List<String> categories, int count);
     QuizQuestion toQuizQuestion(Word correctWord);
     List<QuizQuestion> randomMixedQuiz(int count);
+    int getRemainingDailyQuota(String email, int dailyTarget);
 }

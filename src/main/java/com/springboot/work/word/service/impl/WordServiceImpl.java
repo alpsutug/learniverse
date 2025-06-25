@@ -3,7 +3,9 @@ package com.springboot.work.word.service.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.springboot.work.user.entity.Users;
 import com.springboot.work.word.entity.Word;
+import com.springboot.work.word.repository.WordRepository;
 import com.springboot.work.word.service.WordService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +23,7 @@ public class WordServiceImpl implements WordService {
 
     private final OpenEntityManagerInViewInterceptor openEntityManagerInViewInterceptor;
     private List<Word> allWords;
+    private final WordRepository wordRepository;
 
 
 
@@ -83,5 +86,15 @@ public class WordServiceImpl implements WordService {
     }
 
     /* Diğer metotlar (getAllWords, getByLevel vs.) aynen kalabilir */
+
+    @Override
+    public Word getWordName(String word) {
+        return wordRepository.findByWordIgnoreCase(word);
+    }
+
+    @Override
+    public List<Word> getFavoriWords() {
+        return wordRepository.findByIsFavoriTrue();
+    }
 
 }

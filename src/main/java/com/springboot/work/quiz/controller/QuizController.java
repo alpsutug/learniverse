@@ -54,5 +54,17 @@ public class QuizController {
         return quizServiceImpl.randomMixedQuiz(count);
     }
 
+    @GetMapping("/daily-quota")
+    public ResponseEntity<Map<String, Object>> getDailyQuota(
+            @RequestParam String email,
+            @RequestParam(defaultValue = "10") int target) {
+
+        int remaining = quizServiceImpl.getRemainingDailyQuota(email, target);
+        Map<String, Object> result = new HashMap<>();
+        result.put("target", target);
+        result.put("remaining", remaining);
+        return ResponseEntity.ok(result);
+    }
+
 
 }

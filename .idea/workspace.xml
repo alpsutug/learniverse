@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e554961-6099-4495-a439-30d786a0bc1c" name="Changes" comment="webconfig eklendi">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/repository/WordRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/controller/QuizController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/controller/QuizController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/service/QuizService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/service/QuizService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/controller/WordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/controller/WordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/entity/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/entity/Word.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/service/WordService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/service/WordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/service/WordService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/controller/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/QuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/QuizService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/impl/QuizServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/impl/QuizServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/controller/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/controller/WordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/entity/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/entity/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/WordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/impl/WordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/impl/WordServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,33 +94,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build learniverse.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.learniverse [build].executor": "Run",
-    "Gradle.learniverse [clean].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.WorkApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build learniverse.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.learniverse [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.learniverse [clean].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.WorkApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.WorkApplication">
     <configuration name="learniverse [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -204,7 +219,8 @@
       <workItem from="1750256360614" duration="28257000" />
       <workItem from="1750533593128" duration="10880000" />
       <workItem from="1750720633946" duration="6000" />
-      <workItem from="1750766976589" duration="12653000" />
+      <workItem from="1750766976589" duration="19252000" />
+      <workItem from="1750838807042" duration="1314000" />
     </task>
     <task id="LOCAL-00001" summary="isActive eklendi">
       <option name="closed" value="true" />
@@ -350,7 +366,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750781556053</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="webconfig eklendi">
+      <option name="closed" value="true" />
+      <created>1750783542342</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1750783542342</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,11 +392,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/impl/AuthServiceImpl.java</url>
           <line>48</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/controller/QuizController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/impl/QuizServiceImpl.java</url>

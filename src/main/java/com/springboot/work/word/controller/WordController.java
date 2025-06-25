@@ -1,8 +1,11 @@
 package com.springboot.work.word.controller;
 
+import com.springboot.work.user.entity.Users;
 import com.springboot.work.word.entity.Word;
 import com.springboot.work.word.service.impl.WordServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,5 +43,18 @@ public class WordController {
             @RequestParam(defaultValue = "10") int count) {
 
         return wordServiceImpl.getRandomWordsByLevel(level, count);
+    }
+
+    @GetMapping(path = "/wordName")
+    @ResponseStatus(HttpStatus.OK)
+    public Word getWordName(@RequestParam String word) {
+        return wordServiceImpl.getWordName(word);
+
+    }
+
+
+    @GetMapping("/favori")
+    public ResponseEntity<List<Word>> getFavoriWords() {
+        return ResponseEntity.ok(wordServiceImpl.getFavoriWords());
     }
 }
