@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e554961-6099-4495-a439-30d786a0bc1c" name="Changes" comment="webconfig eklendi">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/repository/WordRepository.java" afterDir="false" />
+    <list default="true" id="3e554961-6099-4495-a439-30d786a0bc1c" name="Changes" comment="word işlemleri">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/controller/QuizController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/controller/QuizController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/service/QuizService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/quiz/service/QuizService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/controller/WordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/controller/WordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/entity/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/entity/Word.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/service/WordService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/service/WordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/word/service/WordService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/controller/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/controller/QuizController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/QuizService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/QuizService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/impl/QuizServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/quiz/service/impl/QuizServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/controller/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/controller/WordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/entity/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/entity/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/WordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/WordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/impl/WordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/impl/WordServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +205,7 @@
       <workItem from="1750533593128" duration="10880000" />
       <workItem from="1750720633946" duration="6000" />
       <workItem from="1750766976589" duration="19252000" />
-      <workItem from="1750838807042" duration="1314000" />
+      <workItem from="1750838807042" duration="2202000" />
     </task>
     <task id="LOCAL-00001" summary="isActive eklendi">
       <option name="closed" value="true" />
@@ -374,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750783542342</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="word işlemleri">
+      <option name="closed" value="true" />
+      <created>1750841942026</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1750841942026</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +376,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="isActive eklendi" />
     <MESSAGE value="webconfig eklendi" />
-    <option name="LAST_COMMIT_MESSAGE" value="webconfig eklendi" />
+    <MESSAGE value="word işlemleri" />
+    <option name="LAST_COMMIT_MESSAGE" value="word işlemleri" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
