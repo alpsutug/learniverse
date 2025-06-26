@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3e554961-6099-4495-a439-30d786a0bc1c" name="Changes" comment="nedpoint swrvisler düzeltildi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/service/impl/AuthServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/springboot/work/auth/service/impl/AuthServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/auth/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/repository/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/repository/WordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/impl/WordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/work/word/service/impl/WordServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +208,7 @@
       <workItem from="1750533593128" duration="10880000" />
       <workItem from="1750720633946" duration="6000" />
       <workItem from="1750766976589" duration="19252000" />
-      <workItem from="1750838807042" duration="11140000" />
+      <workItem from="1750838807042" duration="11764000" />
     </task>
     <task id="LOCAL-00001" summary="isActive eklendi">
       <option name="closed" value="true" />
@@ -410,7 +410,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750941856387</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="nedpoint swrvisler düzeltildi">
+      <option name="closed" value="true" />
+      <created>1750945370000</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1750945370000</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

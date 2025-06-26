@@ -47,23 +47,23 @@ public class WordServiceImpl implements WordService {
         return wordRepository.findAll();
     }
 
+    @Override
     public List<Word> getByLevel(String level) {
-        return allWords.stream()
-                .filter(w -> w.getLevel().equalsIgnoreCase(level))
-                .collect(Collectors.toList());
+        return wordRepository.findByLevelIgnoreCase(level);
     }
 
+
+    @Override
     public List<Word> getByCategory(String category) {
-        return allWords.stream()
-                .filter(w -> category.equalsIgnoreCase(w.getCategory()))
-                .collect(Collectors.toList());
+        return wordRepository.findByCategoryIgnoreCase(category);
     }
 
+
+    @Override
     public List<Word> getByLevelAndCategory(String level, String category) {
-        return allWords.stream()
-                .filter(w -> w.getLevel().equalsIgnoreCase(level) && category.equalsIgnoreCase(w.getCategory()))
-                .collect(Collectors.toList());
+        return wordRepository.findByLevelIgnoreCaseAndCategoryIgnoreCase(level, category);
     }
+
 
     public Word getWordByEnglish(String word) {
         return allWords.stream()

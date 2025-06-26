@@ -11,6 +11,9 @@ public interface WordRepository extends JpaRepository<Word, Long> {
     Word findByWordIgnoreCase(String word);
     List<Word> findByIsFavoriTrue();
     List<Word> findByCategoryIgnoreCaseIn(List<String> categories);
+    List<Word> findByLevelIgnoreCase(String level);
+    List<Word> findByCategoryIgnoreCase(String category);
+    List<Word> findByLevelIgnoreCaseAndCategoryIgnoreCase(String level, String category);
 
 
 }

@@ -40,6 +40,7 @@ public class WordController {
         return wordService.getByLevelAndCategory(level, category);
     }
 
+
     @GetMapping("/quiz")
     public List<Word> getRandomWords(
             @RequestParam String level,
