@@ -10,5 +10,7 @@ import java.util.List;
 public interface WordRepository extends JpaRepository<Word, Long> {
     Word findByWordIgnoreCase(String word);
     List<Word> findByIsFavoriTrue();
+    List<Word> findByCategoryIgnoreCaseIn(List<String> categories);
+
 
 }

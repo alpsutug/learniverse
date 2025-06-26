@@ -105,16 +105,11 @@ public class WordServiceImpl implements WordService {
     @Override
     public List<Word> getByCategories(List<String> categories) {
         if (categories == null || categories.isEmpty()) {
-            return allWords; // hiçbir kategori verilmediyse tüm kelimeleri döner
+            return wordRepository.findAll();
         }
-
-        return allWords.stream()
-                .filter(w -> categories.stream()
-                        .anyMatch(cat -> cat.equalsIgnoreCase(
-                                Optional.ofNullable(w.getCategory()).orElse("")
-                        )))
-                .collect(Collectors.toList());
+        return wordRepository.findByCategoryIgnoreCaseIn(categories);
     }
+
 
 
 

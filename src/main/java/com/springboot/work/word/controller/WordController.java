@@ -66,6 +66,7 @@ public class WordController {
     }
 
 
+
     @PostMapping("/favori/{id}")
     public ResponseEntity<WordResponseDTO> addToFavori(@PathVariable Long id) {
         return ResponseEntity.ok(wordService.addToFavori(id));
