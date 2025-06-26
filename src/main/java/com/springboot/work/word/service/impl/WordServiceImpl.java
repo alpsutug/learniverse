@@ -40,7 +40,7 @@ public class WordServiceImpl implements WordService {
     }
 
     public List<Word> getAllWords() {
-        return allWords;
+        return wordRepository.findAll();
     }
 
     public List<Word> getByLevel(String level) {
