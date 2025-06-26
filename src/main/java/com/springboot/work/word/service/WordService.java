@@ -1,6 +1,7 @@
 package com.springboot.work.word.service;
 
 import com.springboot.work.user.entity.Users;
+import com.springboot.work.word.dto.WordResponseDTO;
 import com.springboot.work.word.entity.Word;
 
 import java.util.List;
@@ -16,5 +17,6 @@ public interface WordService {
     Word getWordName(String word);
     List<Word> getFavoriWords();
     List<Word> getByCategories(List<String> categories);
+    WordResponseDTO addToFavori(Long id);
 
 }

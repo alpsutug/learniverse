@@ -3,7 +3,11 @@ package com.springboot.work.word.service.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.springboot.work.user.dto.UserResponseDTO;
 import com.springboot.work.user.entity.Users;
+import com.springboot.work.util.WorkMessageDTO;
+import com.springboot.work.util.WorkMessageType;
+import com.springboot.work.word.dto.WordResponseDTO;
 import com.springboot.work.word.entity.Word;
 import com.springboot.work.word.repository.WordRepository;
 import com.springboot.work.word.service.WordService;
@@ -110,6 +114,27 @@ public class WordServiceImpl implements WordService {
                                 Optional.ofNullable(w.getCategory()).orElse("")
                         )))
                 .collect(Collectors.toList());
+    }
+
+
+
+    @Override
+    public WordResponseDTO addToFavori(Long id) {
+        Word word = wordRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Kelime bulunamadı, ID: " + id));
+
+        word.setFavori(true);
+        wordRepository.save(word);
+
+        WorkMessageDTO successMessage = WorkMessageDTO.builder()
+                .type(WorkMessageType.SUCCESS)
+                .text("Kelime başarıyla favorilere eklendi.")
+                .build();
+
+        return WordResponseDTO.builder()
+                .wordId(word.getId())
+                .msg(List.of(successMessage))
+                .build();
     }
 
 

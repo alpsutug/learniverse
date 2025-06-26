@@ -1,6 +1,8 @@
 package com.springboot.work.word.controller;
 
+import com.springboot.work.user.dto.UserResponseDTO;
 import com.springboot.work.user.entity.Users;
+import com.springboot.work.word.dto.WordResponseDTO;
 import com.springboot.work.word.entity.Word;
 import com.springboot.work.word.service.WordService;
 import com.springboot.work.word.service.impl.WordServiceImpl;
@@ -61,6 +63,12 @@ public class WordController {
     @GetMapping("/by-categories")
     public List<Word> getWordsByCategories(@RequestParam(required = false) List<String> categories) {
         return wordService.getByCategories(categories);
+    }
+
+
+    @PostMapping("/favori/{id}")
+    public ResponseEntity<WordResponseDTO> addToFavori(@PathVariable Long id) {
+        return ResponseEntity.ok(wordService.addToFavori(id));
     }
 
 
