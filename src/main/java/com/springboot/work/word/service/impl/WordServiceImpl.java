@@ -107,7 +107,12 @@ public class WordServiceImpl implements WordService {
         if (categories == null || categories.isEmpty()) {
             return wordRepository.findAll();
         }
-        return wordRepository.findByCategoryIgnoreCaseIn(categories);
+
+        List<String> lowerCats = categories.stream()
+                .map(String::toLowerCase)
+                .collect(Collectors.toList());
+
+        return wordRepository.findByCategoryListIgnoreCase(lowerCats);
     }
 
 

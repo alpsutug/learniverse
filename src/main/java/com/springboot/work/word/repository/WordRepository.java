@@ -2,6 +2,8 @@ package com.springboot.work.word.repository;
 
 import com.springboot.work.word.entity.Word;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,7 +12,8 @@ import java.util.List;
 public interface WordRepository extends JpaRepository<Word, Long> {
     Word findByWordIgnoreCase(String word);
     List<Word> findByIsFavoriTrue();
-    List<Word> findByCategoryIgnoreCaseIn(List<String> categories);
+    @Query("SELECT w FROM Word w WHERE LOWER(w.category) IN :categories")
+    List<Word> findByCategoryListIgnoreCase(@Param("categories") List<String> categories);
     List<Word> findByLevelIgnoreCase(String level);
     List<Word> findByCategoryIgnoreCase(String category);
     List<Word> findByLevelIgnoreCaseAndCategoryIgnoreCase(String level, String category);
