@@ -56,6 +56,12 @@ public class AuthServiceImpl implements AuthService {
                     msgUtil.createWorkMessageWithCode("email.zaten.kayitli", WorkMessageType.ERROR));
         }
 
+
+        if (userRepository.findByUsername(req.getUsername()) != null) {
+            throw new WorkBusinessException(
+                    msgUtil.createWorkMessageWithCode("username.zaten.kayitli", WorkMessageType.ERROR));
+        }
+
         /* — Kullanıcı pasif olarak kaydediliyor — */
         Users u = new Users();
         u.setEmail(req.getEmail());
